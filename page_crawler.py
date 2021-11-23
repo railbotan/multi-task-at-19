@@ -1,9 +1,11 @@
 from urllib.request import Request, urlopen
 from tqdm import tqdm
+import concurrent.futures
 
 links = open('res.txt', encoding='utf8').read().split('\n')[0:50]
 
-for url in tqdm(links):
+
+def load_url(url):
     try:
         request = Request(
             url,
@@ -11,7 +13,15 @@ for url in tqdm(links):
         )
         resp = urlopen(request, timeout=5)
         code = resp.code
-        print(code)
         resp.close()
+        return code
     except Exception as e:
-        print(url, e)
+        return f"{url} {e}"
+
+
+with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
+    future_to_url = {executor.submit(load_url, url): url for url in links}
+    for future in tqdm(concurrent.futures.as_completed(future_to_url)):
+        url = future_to_url[future]
+        result = future.result()
+        print(result)
