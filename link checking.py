@@ -15,7 +15,7 @@ def get_wiki_page_existence(wiki_page_url):
 
 links = open('res.txt', encoding='utf8').read().split('\n')
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
+with concurrent.futures.ThreadPoolExecutor(max_workers=61) as executor:
     futures = []
     for url in links:
         futures.append(executor.submit(get_wiki_page_existence, url))
