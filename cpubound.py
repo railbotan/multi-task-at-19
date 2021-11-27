@@ -15,7 +15,7 @@ def is_prime(n):
     return n
 
 def main():
-    with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=61) as executor:
         for prime in zip(PRIMES, executor.map(is_prime, PRIMES)):
             print(prime)
 
