@@ -5,14 +5,13 @@ from concurrent.futures import ThreadPoolExecutor
 print(datetime.datetime.now())
 links = open('wiki_urls.txt', encoding='utf8').read().split('\n')
 
-
 def try_open(url):
     try:
         request = Request(
             url,
             headers={'User-Agent': 'Mozilla/5.0 (Windows NT 9.0; Win65; x64; rv:97.0) Gecko/20105107 Firefox/92.0'},
         )
-        resp = urlopen(request, timeout=5, cafile=certifi.where())
+        resp = urlopen(request, timeout=100, cafile=certifi.where())
         code = resp.code
         resp.close
         return code
