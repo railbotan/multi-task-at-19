@@ -2,7 +2,7 @@
 **Во всех замерах используется 1069 ссылок.**
 ### 1. Синхронный проход (результат профилирования):
 
-![](C:\Users\Михалёвы\Pictures\multitask.png)
+![multitask](https://user-images.githubusercontent.com/78908105/143779766-c611f376-e2a6-4e42-bfc2-ee9fa0083603.png)
 
 ### 2. Асинхронный проход по ссылкам:
 
@@ -26,7 +26,7 @@
 
 Ресурсы компьютера при работе:
 
-![](C:\Users\Михалёвы\Pictures\cpubound.png)
+![cpubound](https://user-images.githubusercontent.com/78908105/143779782-cb09fc6b-845a-44c6-a1dd-262a441924f1.png)
 
 ### 4. Генерация монет с несколькими ядрами
 
@@ -45,4 +45,4 @@
 
 ### На картинке результат работы при 2 и 4 ядрах:
 
-![](C:\Users\Михалёвы\Pictures\cpubound1.png)
+![cpubound1](https://user-images.githubusercontent.com/78908105/143779789-6bdb4e88-b892-4cbc-a333-94723fa21385.png)
