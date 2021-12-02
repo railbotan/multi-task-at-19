@@ -22,4 +22,3 @@ with concurrent.futures.ThreadPoolExecutor(max_work = 100) as executor:
             print(future.result())
         except Exception as e:
             print(url, e)
-            
