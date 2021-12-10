@@ -13,6 +13,7 @@ def gen_print(z):
         if h.endswith("00000"):
             print(s, h)
             print(datetime.datetime.now())
+            break
 
 
 def main():
